@@ -4,7 +4,6 @@ import os
 import numpy as np
 from datetime import datetime
 import requests
-from flask import jsonify
 
 training_images_dir = "Training_images"
 known_face_encodings = []
@@ -54,6 +53,6 @@ def perform_inference(image):
             name = name + "@dsce.edu.in"
 
             attendance_data.append({"Name": name})
-        return jsonify(attendance_data)
+        return attendance_data
     except Exception as e:
-        return jsonify({"error": str(e)}), 500
+        return None

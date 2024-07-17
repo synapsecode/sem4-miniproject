@@ -18,7 +18,8 @@ def allowed_file(filename):
 def get_attendance(image_link):
     perform_training()
     image = requests.get(image_link)
-    return perform_inference(image.content)
+    students = perform_inference(image.content)
+    return render_template('index.html', students=students)
 
 @app.route("/")
 def home():
