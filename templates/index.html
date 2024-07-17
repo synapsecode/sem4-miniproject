@@ -1,0 +1,119 @@
+<!--
+// v0 by Vercel.
+// https://v0.dev/t/JlWJXc9Zg6x
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FaceXync</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <div class="mx-auto max-w-2xl space-y-6 py-12">
+        <div class="space-y-2 text-center">
+            <h1 class="text-3xl font-bold">Classroom Photo Analyzer</h1>
+            <p class="text-muted-foreground">
+                Upload a class photo and get the unique student numbers of the students present.
+            </p>
+        </div>
+        <div class="rounded-lg border bg-card text-card-foreground shadow-sm" data-v0-t="card">
+            <div class="flex flex-col space-y-1.5 p-6">
+                <h3 class="whitespace-nowrap text-2xl font-semibold leading-none tracking-tight">Upload Class Photo</h3>
+                <p class="text-sm text-muted-foreground">Drag and drop your class photo or click to select a file.</p>
+            </div>
+            <div class="p-6">
+
+                <form class="grid gap-4" id="click2upload" method=post enctype=multipart/form-data action="/upload">
+                    <input type=file name=file>
+                    <div
+                        class="flex h-48 items-center justify-center rounded-md border-2 border-dashed border-muted transition-colors hover:border-primary">
+                        <div class="text-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="mx-auto h-12 w-12 text-muted-foreground">
+                                <path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"></path>
+                                <path d="M12 12v9"></path>
+                                <path d="m16 16-4-4-4 4"></path>
+                            </svg>
+                            <div class="mt-4 font-medium text-muted-foreground">Click to Upload Class Image</div>
+                            <div class="mt-2 text-sm text-muted-foreground">to get all the present students</div>
+                            <input class="sr-only" type="file" name=file />
+                        </div>
+                    </div>
+                    <input type="submit"
+                        class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2">
+                    Upload Photo
+                    </input>
+                </form>
+            </div>
+        </div>
+        <div class="rounded-lg border bg-card text-card-foreground shadow-sm" data-v0-t="card">
+            <div class="flex flex-col space-y-1.5 p-6">
+                <h3 class="whitespace-nowrap text-2xl font-semibold leading-none tracking-tight">Unique Student Numbers
+                </h3>
+                <p class="text-sm text-muted-foreground">
+                    The unique student numbers of the students present in the uploaded photo.
+                </p>
+            </div>
+            <div class="p-6">
+                <div class="grid gap-2">
+                    <div class="flex items-center justify-between rounded-md bg-muted/20 px-4 py-2">
+                        <div>USN 123456</div>
+                        <button
+                            class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 w-10">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="h-4 w-4">
+                                <rect width="14" height="14" x="8" y="8" rx="2" ry="2"></rect>
+                                <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path>
+                            </svg>
+                            <span class="sr-only">Copy USN</span>
+                        </button>
+                    </div>
+                    <div class="flex items-center justify-between rounded-md bg-muted/20 px-4 py-2">
+                        <div>USN 789012</div>
+                        <button
+                            class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 w-10">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="h-4 w-4">
+                                <rect width="14" height="14" x="8" y="8" rx="2" ry="2"></rect>
+                                <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path>
+                            </svg>
+                            <span class="sr-only">Copy USN</span>
+                        </button>
+                    </div>
+                    <div class="flex items-center justify-between rounded-md bg-muted/20 px-4 py-2">
+                        <div>USN 345678</div>
+                        <button
+                            class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 w-10">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="h-4 w-4">
+                                <rect width="14" height="14" x="8" y="8" rx="2" ry="2"></rect>
+                                <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path>
+                            </svg>
+                            <span class="sr-only">Copy USN</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+<script>
+    let click2upload = document.getElementById('click2upload');
+
+    click2upload.addEventListener('click', () => {
+        console.log('upload')
+    });
+</script>
+
+</html>
